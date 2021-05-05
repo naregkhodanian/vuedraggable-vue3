@@ -4462,7 +4462,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 var getHtmlElementFromNode = function getHtmlElementFromNode(_ref) {
   var el = _ref.el;
-  return el;
+  return el || {};
 };
 
 var addContext = function addContext(domElement, context) {
@@ -4817,7 +4817,9 @@ var draggableComponent = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["d
     targetDomElement.__draggable_component__ = this;
   },
   updated: function updated() {
-    this.componentStructure.updated();
+    this.$nextTick(function () {
+      this.componentStructure.updated();
+    });
   },
   beforeUnmount: function beforeUnmount() {
     if (this._sortable !== undefined) this._sortable.destroy();

@@ -139,7 +139,9 @@ const draggableComponent = defineComponent({
   },
 
   updated() {
-    this.componentStructure.updated();
+    this.$nextTick(function () {
+      this.componentStructure.updated();
+    })
   },
 
   beforeUnmount() {
