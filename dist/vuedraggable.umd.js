@@ -4471,7 +4471,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 var getHtmlElementFromNode = function getHtmlElementFromNode(_ref) {
   var el = _ref.el;
-  return el || {};
+  return el;
 };
 
 var addContext = function addContext(domElement, context) {
