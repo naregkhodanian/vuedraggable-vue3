@@ -4474,9 +4474,7 @@ var getHtmlElementFromNode = function getHtmlElementFromNode(_ref) {
   return el;
 };
 
-var addContext = function addContext() {
-  var domElement = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var context = arguments.length > 1 ? arguments[1] : undefined;
+var addContext = function addContext(domElement, context) {
   return domElement.__draggable_context = context;
 };
 
@@ -4522,7 +4520,7 @@ var componentStructure_ComponentStructure = /*#__PURE__*/function () {
       var defaultNodes = this.defaultNodes,
           realList = this.realList;
       defaultNodes.forEach(function (node, index) {
-        addContext(getHtmlElementFromNode(node), {
+        addContext(getHtmlElementFromNode(node) || {}, {
           element: realList[index],
           index: index
         });
