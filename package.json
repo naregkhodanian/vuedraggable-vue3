@@ -1,5 +1,5 @@
 {
-  "name": "vuedraggable",
+  "name": "@naregkh/vuedraggable",
   "version": "4.0.1",
   "description": "draggable component for vue",
   "license": "MIT",
